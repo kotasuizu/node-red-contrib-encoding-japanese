@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-encoding-japanese",
+  "version": "0.0.1",
+  "description": "A Node-RED node of converts character encoding.",
+  "dependencies": {
+    "encoding-japanese": "~1.0.29"
+  },
+  "keywords": [
+    "node-red",
+    "encoding",
+    "japanese",
+    "bluemix"
+  ],
+  "node-red": {
+    "nodes": {
+      "encoding": "encoding.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kotasuizu/node-red-contrib-encoding-japanese"
+  },
+  "author": "Kota Suizu",
+  "license": "MIT"
+}

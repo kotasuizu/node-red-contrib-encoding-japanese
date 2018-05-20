@@ -1,0 +1,77 @@
+<!--
+  Copyright (c) 2018 Kota Suizu
+  Released under the MIT license
+  http://opensource.org/licenses/mit-license.php
+-->
+
+<script type="text/x-red" data-template-name="Encoding-Japanese">
+  <div class="form-row">
+    <label for="node-input-fromencode"><i class="fa fa-bookmark"></i> From</label>
+    <select type="text" id="node-input-fromencode">
+        <option value="UTF8">UTF8</option>
+        <option value="UNICODE">UNICODE</option>
+        <option value="JIS">JIS</option>
+        <option value="SJIS">SJIS</option>
+        <option value="EUCJP">EUCJP</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-toencode"><i class="fa fa-bookmark"></i> To</label>
+    <select type="text" id="node-input-toencode">
+        <option value="UTF8">UTF8</option>
+        <option value="UNICODE">UNICODE</option>
+        <option value="JIS">JIS</option>
+        <option value="SJIS">SJIS</option>
+        <option value="EUCJP">EUCJP</option>
+        </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="Encoding-Japanese">
+  <p>This node converts character encoding.</p>
+  <p>
+    Set the following in the node setting or in the input payload.:
+    <ul>
+      <li><code>msg.payload</code> : <Strong>(required binary)</Strong> Binary buffer of string to convert.</li>
+    </ul>
+  </p>
+  <p>
+    The output message is below:
+    <ul>
+      <li><code>payload</code> is converted character string.</li>
+    </ul>
+  </p>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('Encoding-Japanese', {
+    category: 'function',
+    defaults: {
+      name: {
+        value: ""
+      },
+      fromencode: {
+        value: "SJIS",
+        required: true
+      },
+      toencode: {
+        value: "UTF8",
+        required: true
+      }
+    },
+    color: "#00A0E2",
+    inputs: 1,
+    outputs: 1,
+    icon: "key.svg",
+    label: function() {
+      return this.name || "Encoding Japanese";
+    },
+    labelStyle: function() {
+      return this.name ? "node_label_italic" : "";
+    }
+  });
+</script>
